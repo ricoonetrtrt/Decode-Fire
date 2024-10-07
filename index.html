@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحديات الفريق</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>مرحبًا بك في تحديات الفريق</h1>
+
+        <div id="password-section">
+            <h2>أدخل اسم فريقك:</h2>
+            <input type="text" id="team-name-input" placeholder="اسم الفريق">
+            
+            <h2>أدخل كلمة السر لفك الشيفرة:</h2>
+            <input type="password" id="password-input" placeholder="كلمة السر">
+            <button onclick="verifyPassword()">تحقق</button>
+        </div>
+
+        <div id="challenges-section" style="display: none;">
+            <h2>التحديات:</h2>
+            <div id="challenge-container"></div>
+            <input type="text" id="answer-input" placeholder="أدخل إجابتك">
+            <button onclick="submitAnswer()">إرسال الإجابة</button>
+            <p id="timer">الوقت المتبقي: 5 دقائق</p>
+        </div>
+
+        <div id="final-section" style="display: none;">
+            <h2>الشيفرة التي حصلت عليها: <span id="code-key"></span></h2>
+            <input type="text" id="final-answer-input" placeholder="أدخل الشيفرة">
+            <button onclick="submitFinalAnswer()">إرسال الإجابة النهائية</button>
+        </div>
+
+        <div id="result-section" style="display: none;">
+            <h2 id="final-message"></h2>
+
+            <!-- مشغل الصوت -->
+            <div id="audio-player" style="display: none;">
+                <audio id="message-audio" controls>
+                    <source src="ElevenLabs_2024-10-05T16_39_51_Will_pre_s50_sb75_se0_b_m2.mp3" type="audio/mpeg">
+                    المتصفح لا يدعم تشغيل الصوت.
+                </audio>
+            </div>
+        </div>
+
+        <!-- شريط التقدم -->
+        <div id="progress-bar-container" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+            <p id="progress-text">0 من 5 تحديات مكتملة</p>
+        </div>
+
+        <!-- نافذة منبثقة لعرض الرسائل المتحركة -->
+        <div id="notification" style="display: none;">
+            <p id="notification-message"></p>
+        </div>
+
+        <!-- النص في أسفل الصفحة -->
+        <div id="bottom-text">
+            This App By Islam
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
